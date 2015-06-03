@@ -36,7 +36,7 @@ class m_user extends CI_Model {
 
     /**
      * @param $user string
-     * @param $suname string
+     * @param $surname string
      */
     public function change_surname($user,$surname){
         $query = array(
