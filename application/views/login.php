@@ -1,41 +1,12 @@
-<!DOCTYPE html>
-<html>
+<div class="container">
 
-<head lang="en">
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="<?php echo base_url('application/assets/css/bootstrap.min.css'); ?>">
-    <script type="text/javascript" src="<?php echo base_url('application/assets/js/bootstrap.min.js'); ?>">
-    </script>
-    <title>Projet PhP</title>
-</head>
-
-<body>
-
-<header>
-    <h1>Page de Log</h1>
-</header>
-
-<nav>
-    <a href="PageAdmin.html"> 	Admin</a><br>
-    <a href="PageUser.html"> 	User </a><br>
-</nav>
-
-<aside>
-    <form method="post" action="PageAdmin.html">
-        <p>
-            <label for="pseudo">Votre pseudo :</label>
-            <input type="text" name="pseudo" id="pseudo" placeholder="Ex : bvozel"  />
-
-            <br/>
-            <label for="pass">Votre mot de passe :</label>
-            <input type="password" name="pass" id="pass" />
-
-            <br/>
-            <input type="submit" value="Envoyer" />
-
-        </p>
+    <?php ?>
+        <h2 class="form-signin-heading">Connectez vous</h2>
+        <label for="inputEmail" class="sr-only">Nom d'utilisateur</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Nom d'utilisateur" required autofocus>
+        <label for="inputPassword" class="sr-only">Mot de passe</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Mot de Passe" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Se connecter</button>
     </form>
-</aside>
-</body>
 
-</html>
+</div>
