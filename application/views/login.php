@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container login">
 
     <?php if(!isset($user)):?>
 
