@@ -20,10 +20,11 @@ class Login extends CI_Controller {
     {
         $this->load->helper("url");
         $this->load->helper("form");
-        //$this->load->library('session');
+        $this->load->library('session');
         $this->load->library("form_validation");
 
         $data['title'] = "Se connecter";
+        $data['user'] = $this->session->user;
         $this->load->view("header", $data);
         $this->form_validation->set_rules('user', 'Nom d\'utilisateur', 'required');
         $this->form_validation->set_rules('password', 'Mot de passe', 'required');
@@ -33,6 +34,7 @@ class Login extends CI_Controller {
         }
         else {
             if($this->m_user->check_password($this->input->post("user"),$this->input->post("password")) == TRUE) {
+                $this->session->set_userdata("user", $this->input->post("user"));
                 $data['user'] = $this->input->post("user");
                 $this->load->view("login", $data);
             } else {
@@ -40,5 +42,12 @@ class Login extends CI_Controller {
                 $this->load->view("login", $data);
             }
         }
+    }
+    public function Disconnect()
+    {
+        $this->load->helper("url");
+        $this->load->library('session');
+        $this->session->sess_destroy();
+        $this->index();
     }
 }
