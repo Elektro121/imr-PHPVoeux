@@ -4,12 +4,10 @@
         <li><h4 href=""><font color="#337ab7"><b>Panneau d'administration</b></font></h4></li>
         <li><a href="">Accueil</a></li>
         <li><a href="">Mes heures</a></li>
-        <li><a href="">Modules</a></li>
-        <li><a href="">Réservation des heures</a></li>
-        <li><a>Panneau de configuration</a></li>
-            <ul><a href="">Vu de mes heures</a></ul>
-            <ul><a href="">Vu de tous</a></ul>
-        <li><a href="">Déconnexion</a></li>
+        <li><a href="">Heures des Modules</a></li>
+        <li><a href="">Réservation d'heures</a></li>
+        <li><a href="">Heures des enseignants</a></li>
+        <li><?php echo anchor("Login/Disconnect", "Déconnexion")?></li>
 
         <?php if($admin == TRUE):?>
             <ul class="nav nav-sidebar">
