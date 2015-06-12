@@ -26,6 +26,7 @@ class Dashboard extends CI_Controller{
         $this->load->view("header", $data);
         $this->load->view("head", $data);
         $this->load->view("menu_left", $data);
+        $this->load->view('vue', $data);
         $this->load->view("footer", $data);
     }
 }
