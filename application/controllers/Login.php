@@ -16,7 +16,7 @@ class Login extends CI_Controller {
         $this->load->model("m_user");
     }
 
-    public function index()
+    public function index($string)
     {
         $this->load->helper("url");
         $this->load->helper("form");
@@ -26,6 +26,7 @@ class Login extends CI_Controller {
         $data['title'] = "Se connecter";
         $data['user'] = $this->session->user;
         $this->load->view("header", $data);
+        $this->load->view("head", $data);
         $this->form_validation->set_rules('user', 'Nom d\'utilisateur', 'required');
         $this->form_validation->set_rules('password', 'Mot de passe', 'required');
 
