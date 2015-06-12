@@ -12,14 +12,16 @@
         <li><a></a></li>
     </ul>
 
-    <ul class="nav nav-sidebar">
-        <li><h4 href=""><font color="#337ab7"><b>Partie Administrateur</b></font></h4></li>
-        <li><a href="">Gestion des utilisateurs</a></li>
-        <li><a href="">Gestion des HETD</a></li>
-        <li><a href="">Gestion des modules</a></li>
-        <li><a href="">Gestion des décharges</a></li>
+    <?php if($admin == TRUE):?>
+        <ul class="nav nav-sidebar">
+            <li><h4 href=""><font color="#337ab7"><b>Partie Administrateur</b></font></h4></li>
+            <li><a href="">Gestion des utilisateurs</a></li>
+            <li><a href="">Gestion des HETD</a></li>
+            <li><a href="">Gestion des modules</a></li>
+            <li><a href="">Gestion des décharges</a></li>
 
-        <li><a href="">Déconnexion</a></li>
-    </ul>
+            <li><a href="">Déconnexion</a></li>
+        </ul>
+    <?php endif; ?>
 
 </div>
