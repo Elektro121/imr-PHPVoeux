@@ -1,11 +1,12 @@
 <?php
 /**
  * Created by PhpStorm.
+ * User: Viince
  * Date: 12/06/2015
- * Time: 09:03
+ * Time: 11:33
  */
 
-class Dashboard extends CI_Controller{
+class Reservation extends CI_Controller{
     public function __construct()
     {
         parent::__construct();
@@ -26,7 +27,7 @@ class Dashboard extends CI_Controller{
         $this->load->view("header", $data);
         $this->load->view("head", $data);
         $this->load->view("menu_left", $data);
-        $this->load->view('dashboard', $data);
+        $this->load->view('reservation', $data);
         $this->load->view("footer", $data);
     }
 }

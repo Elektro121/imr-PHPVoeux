@@ -5,7 +5,7 @@
  * Time: 09:03
  */
 
-class Dashboard extends CI_Controller{
+class Heures_modules extends CI_Controller{
     public function __construct()
     {
         parent::__construct();
@@ -26,7 +26,7 @@ class Dashboard extends CI_Controller{
         $this->load->view("header", $data);
         $this->load->view("head", $data);
         $this->load->view("menu_left", $data);
-        $this->load->view('dashboard', $data);
+        $this->load->view('heures_modules', $data);
         $this->load->view("footer", $data);
     }
 }
