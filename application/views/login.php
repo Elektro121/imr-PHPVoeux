@@ -19,7 +19,7 @@
     <?php endif;?>
 
     <?php if(isset($user)):?>
-        <h2>Bonjour <?=$user?> ! Vous êtes déjà connecté.<?php anchor("Login/Disconnect", "Se déconnecter.")?></h2>
+        <h2>Bonjour <?=$user?> ! Vous êtes déjà connecté. <?php anchor("Login/Disconnect", "Se déconnecter.")?></h2>
     <?php endif;?>
 
 </div>
