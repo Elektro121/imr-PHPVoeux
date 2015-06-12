@@ -16,7 +16,7 @@ class Login extends CI_Controller {
         $this->load->model("m_user");
     }
 
-    public function index($string)
+    public function index()
     {
         $this->load->helper("url");
         $this->load->helper("form");
