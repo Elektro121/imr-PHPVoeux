@@ -7,10 +7,8 @@
         <li><a href="">Modules</a></li>
         <li><a href="">Réservation des heures</a></li>
         <li><a>Panneau de configuration</a></li>
-        <ul>
-            <li><a href="">Vu de mes heures</a></li>
-            <li><a href="">Vu de tous</a></li>
-        </ul>
+            <ul><a href="">Vu de mes heures</a></ul>
+            <ul><a href="">Vu de tous</a></ul>
         <li><a></a></li>
     </ul>
 
