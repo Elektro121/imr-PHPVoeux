@@ -21,11 +21,11 @@ class Dashboard extends CI_Controller{
     }
 
     public function index() {
+        global $data;
         $data['title'] = "Acceuil";
         $this->load->view("header", $data);
         $this->load->view("head", $data);
         $this->load->view("menu_left", $data);
-        echo "<p>lol</p>";
         $this->load->view("footer", $data);
     }
 }
