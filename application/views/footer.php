@@ -1,6 +1,9 @@
-            <div class="navbar navbar-inverse navbar-fixed-bottom">
-                <p><font color="white"></br>Romé Vincent & Tostivint Alexandre - IMR1</font></p>
-            </div>
+<nav class="navbar navbar-default navbar-fixed-bottom" xmlns="http://www.w3.org/1999/html">
+                <div class="container-fluid">
+                        <p></br>Romé Vincent & Tostivint Alexandre - IMR1</p>
+                </div>
+            </nav>
         </div>
     </body>
 </html>
+
