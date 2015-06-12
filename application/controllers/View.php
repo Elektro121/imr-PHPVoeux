@@ -27,7 +27,4 @@ class View extends CI_Controller{
         echo "Mes Heures";
     }
 
-    public function MyHours() {
-        echo "Mes Heures";
-    }
 }
