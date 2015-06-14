@@ -3,7 +3,7 @@
     <ul class="nav nav-sidebar">
         <li><h4><font color="#337ab7"><b>Panneau d'administration</b></font></h4></li>
         <li><?php echo anchor("Dashboard", "Accueil")?></li>
-        <li><?php echo anchor("Heures", "Mes heures")?></li>
+        <li><?php echo anchor("Assignements", "Mes heures")?></li>
         <li><?php echo anchor("Heures_modules", "Heures des Modules")?></li>
         <li><?php echo anchor("Reservation", "Réservation des Heures")?></li>
         <li><?php echo anchor("Heures_enseignant", "Heures des Enseignant")?></li>

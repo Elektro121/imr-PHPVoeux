@@ -5,6 +5,9 @@
  * Time: 13:42
  */
 
+// TODO fonction del
+// TODO fonction set
+
 class m_user extends CI_Model {
     public function __construct() {
         $this->load->database();
@@ -137,4 +140,23 @@ class m_user extends CI_Model {
             return FALSE;
         }
     }
+
+    /***
+     * @param $user string
+     * @return array
+     */
+    public function get_all($user) {
+        $query=$this->db->get("enseignant");
+        $result = $query->result_array();
+        return $query;
+    }
+
+    /**
+     * @param $user string
+     */
+    public function del($user) {
+        $this -> db -> where('enseignant', $user);
+        $this -> db -> delete('enseignant');
+    }
 }
+
