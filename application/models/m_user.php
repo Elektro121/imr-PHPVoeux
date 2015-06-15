@@ -158,5 +158,6 @@ class m_user extends CI_Model {
         $this -> db -> where('enseignant', $user);
         $this -> db -> delete('enseignant');
     }
+
 }
 

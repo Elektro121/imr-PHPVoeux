@@ -49,4 +49,31 @@ class m_contenu extends CI_Model {
         $resultat = $resultat['Statutaire'] - $resultat['Service'];
         return $resultat;
     }
+
+    public function suscribe($module, $type, $enseignant) {
+        $where = array(
+            'module' => $module,
+            'partie' => $type,
+        );
+        $this->db->update('contenu',array('enseignant' => $enseignant), $where);
+    }
+
+    public function unsuscribe($module, $partie) {
+        $where = array(
+            'module' => $module,
+            'partie' => $partie,
+        );
+        $this->db->update('contenu',array('enseignant' => NULL), $where);
+    }
+
+    public function verif_enseignant($module, $partie, $enseignant) {
+        $query=$this->db->query("SELECT enseignant FROM contenu WHERE module='".$this->db->escape_str($module)."' AND partie='".$this->db->escape_str($partie)."';");
+        $result = $query->row_array();
+        if($result['enseignant']== $enseignant) {
+            return TRUE;
+        }else{
+            return FALSE;
+        }
+    }
+
 }

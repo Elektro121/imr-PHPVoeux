@@ -43,4 +43,50 @@ class Assignements extends CI_Controller{
         $this->load->view('assignements_inscription', $data);
         $this->load->view("footer", $data);
     }
+
+    public function Desinscrire($module, $type) {
+        global $data;
+        $module = urldecode($module);
+        $type = urldecode($type);
+        if($this->m_contenu->verif_enseignant($module, $type, $data['user'])) {
+            $this->m_contenu->unsuscribe($module,$type);
+            $data['resultat']="Vous avez bien été désinscrit au cours ".$type." du module ".$module.".";
+        } else {
+            if ($data['admin'] == TRUE) {
+                $this->m_contenu->unsuscribe($module,$type);
+                $data['resultat']="Vous avez bien désinscrit l'enseignant du cours ".$type." du module ".$module.".";
+            } else {
+                $data['error']="Vous n'avez pas les droits nécessaires pour cette action";
+            }
+        }
+        $data['title'] = "Désinscription à un module";
+        $this->load->view("header", $data);
+        $this->load->view("head", $data);
+        $this->load->view("menu_left", $data);
+        $this->load->view('resultat_action', $data);
+        $this->load->view("footer", $data);
+    }
+
+    public function Inscrire($module, $type, $enseignant = NULL) {
+        global $data;
+        $module = urldecode($module);
+        $type = urldecode($type);
+        if($enseignant === NULL) {
+            $this->m_contenu->suscribe($module,$type,$data['user']);
+            $data['resultat']="Vous avez bien été inscrit au cours ".$type." du module ".$module.".";
+        } else {
+            if ($data['admin'] == TRUE) {
+                $this->m_contenu->suscribe($module,$type,$enseignant);
+                $data['resultat']="Vous avez bien inscrit ".$enseignant." au cours ".$type." du module ".$module.".";
+            } else {
+                $data['error']="Vous n'avez pas les droits nécessaires pour cette action";
+            }
+        }
+        $data['title'] = "Inscription à un module";
+        $this->load->view("header", $data);
+        $this->load->view("head", $data);
+        $this->load->view("menu_left", $data);
+        $this->load->view('resultat_action', $data);
+        $this->load->view("footer", $data);
+    }
 }
