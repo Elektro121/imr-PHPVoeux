@@ -10,3 +10,7 @@ tr.info2{
     background-color:#337ab7;
     color:#ffffff;
 }
+
+.btn-droite{
+    float:right;
+}
