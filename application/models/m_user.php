@@ -145,18 +145,28 @@ class m_user extends CI_Model {
      * @param $user string
      * @return array
      */
-    public function get_all($user) {
+    public function get_all() {
         $query=$this->db->get("enseignant");
         $result = $query->result_array();
-        return $query;
+        return $result;
     }
 
     /**
      * @param $user string
      */
     public function del($user) {
-        $this -> db -> where('enseignant', $user);
+        $this -> db -> where('login', $user);
         $this -> db -> delete('enseignant');
+    }
+
+    public function clean($user) {
+        $this -> db -> where('enseignant', $user);
+        $this -> db -> update('contenu', array('enseignant' => NULL));
+
+        $this -> db -> where('responsable', $user);
+        $this -> db -> update('module', array('responsable' => NULL));
+
+        $this -> db -> delete('decharge', array('enseignant' => $user));
     }
 
     public function get_usernames() {
@@ -164,6 +174,20 @@ class m_user extends CI_Model {
         $query=$this->db->get("enseignant");
         $result = $query->result_array();
         return $result;
+    }
+
+    public function add($login, $pwd, $nom, $prenom, $statutaire, $choixtype, $actif, $administrateur) {
+        $request = array(
+            'login' => $login,
+            'pwd' => $pwd,
+            'nom' => $nom,
+            'prenom' => $prenom,
+            'statut' => $choixtype,
+            'statutaire' => $statutaire,
+            'actif' => $actif,
+            'administrateur' => $administrateur,
+        );
+        $this->db->insert('enseignant',$request);
     }
 }
 
