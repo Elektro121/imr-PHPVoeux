@@ -40,7 +40,7 @@ class View extends CI_Controller
     public function Prof()
     {
         global $data;
-        $data['title'] = "Heures par module";
+        $data['title'] = "Heures par enseignant";
         $data['contenu'] = $this->m_module->get_enseignant();
         $this->load->view("header", $data);
         $this->load->view("head", $data);
