@@ -38,7 +38,7 @@
                 </label>
             </div>
             <div class="checkbox">
-                <label>
+                <label> 
                     <input type="checkbox" name="actif" value="1"> Est actif ?
                 </label>
             </div>

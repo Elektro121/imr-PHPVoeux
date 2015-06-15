@@ -189,5 +189,17 @@ class m_user extends CI_Model {
         );
         $this->db->insert('enseignant',$request);
     }
+
+    public function modify($login, $nom, $prenom, $statutaire, $choixtype, $actif, $administrateur) {
+        $request = array(
+            'nom' => $nom,
+            'prenom' => $prenom,
+            'statut' => $choixtype,
+            'statutaire' => $statutaire,
+            'actif' => $actif,
+            'administrateur' => $administrateur,
+        );
+        $this->db->update('enseignant',$request,array('login' => $login));
+    }
 }
 

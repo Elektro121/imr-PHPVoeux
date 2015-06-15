@@ -78,6 +78,45 @@ class Utilisateur extends CI_Controller {
         }
     }
 
+    public function Modification($user) {
+        global $data;
+        if($data['admin']) {
+            $data['title'] = "Modification d'un utilisateur";
+
+            $this->form_validation->set_rules('login', 'Nom d\'utilisateur', 'required');
+            $this->form_validation->set_rules('nom', 'Nom de Famille', 'required');
+            $this->form_validation->set_rules('prenom', 'Prénom', 'required');
+            $this->form_validation->set_rules('statutaire', 'Heures statutaires', 'required');
+            $this->form_validation->set_rules('choixtype', 'Choix du Type', 'required');
+
+            if ($this->form_validation->run() == FALSE) {
+
+            } else {
+                $actif = ($this->input->post('actif') === "1") ? 1 : 0;
+                $admin = ($this->input->post('administrateur') === "1") ? 1 : 0;
+                $this->m_user->modify(
+                    $this->input->post('login'),
+                    $this->input->post('nom'),
+                    $this->input->post('prenom'),
+                    $this->input->post('statutaire'),
+                    $this->input->post('choixtype'),
+                    $actif,
+                    $admin
+                );
+                $data['resultat'] = "L'utilisateur ".$this->input->get('login')."à bien été modifié dans la base de données.";
+            }
+            $data['modify'] = $this->m_user->get_details($user);
+            $this->load->view("header", $data);
+            $this->load->view("head", $data);
+            $this->load->view("menu_left", $data);
+            $this->load->view('resultat_action', $data);
+            $this->load->view('utilisateur_modification', $data);
+            $this->load->view("footer", $data);
+        } else {
+            redirect('Dashboard', 'refresh');
+        }
+    }
+
     public function Supprimer($user) {
         global $data;
         if($data['admin']) {

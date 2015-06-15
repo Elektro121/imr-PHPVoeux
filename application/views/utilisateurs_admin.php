@@ -1,6 +1,7 @@
 <div class="col-sm-9 col-md-9">
     <h1>
-        Voici la liste des utilisateurs :
+        Voici la liste des utilisateurs :    <?php echo anchor('/Utilisateur/Creation', '<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Ajouter un utilisateur', 'class="btn btn-default" role="button"')?>
+
     </h1>
     <div class="panel panel-info">
         <table class="table">
@@ -32,7 +33,7 @@
                     <?php endif;?>
                 <?php endforeach ?>
                 <td>
-                    <?php echo anchor("Utilisateur/Modifier/".$lignes['login'],"<button type='button' class='btn btn-default' title='Modifier'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></button>"); ?>
+                    <?php echo anchor("Utilisateur/Modification/".$lignes['login'],"<button type='button' class='btn btn-default' title='Modifier'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></button>"); ?>
                     <?php echo anchor("Utilisateur/Supprimer/".$lignes['login'],"<button type='button' class='btn btn-default' title='Supprimer'><span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span></button>"); ?>
                 </td>
             </tr>
