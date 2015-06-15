@@ -1,9 +1,10 @@
 <div class="col-sm-9 col-md-9">
-    <p>
+    <h1>
         Voici la liste des utilisateurs :
-    </p>
-    <table class="table table-hover">
-        <tr>
+    </h1>
+    <div class="panel panel-info">
+        <table class="table">
+            <tr class="info2">
             <th>Login</th>
             <th>Nom</th>
             <th>Prenom</th>
@@ -31,10 +32,11 @@
                     <?php endif;?>
                 <?php endforeach ?>
                 <td>
-                    <?php echo anchor("Utilisateur/Modifier/".$lignes['login'],"<button type='button' class='btn btn-default'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></button>"); ?>
-                    <?php echo anchor("Utilisateur/Supprimer/".$lignes['login'],"<button type='button' class='btn btn-default'><span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span></button>"); ?>
+                    <?php echo anchor("Utilisateur/Modifier/".$lignes['login'],"<button type='button' class='btn btn-default' title='Modifier'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></button>"); ?>
+                    <?php echo anchor("Utilisateur/Supprimer/".$lignes['login'],"<button type='button' class='btn btn-default' title='Supprimer'><span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span></button>"); ?>
                 </td>
             </tr>
         <?php endforeach ?>
     </table>
+    </div>
 </div>
