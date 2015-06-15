@@ -91,7 +91,7 @@ class m_module extends CI_Model {
      * @return array
      */
     public function get_module() {
-        $module = "SELECT public, semestre, libelle FROM module ";
+        $module = "SELECT public, semestre, libelle, sum(hed) FROM contenu INNER JOIN module where module.ident = contenu.module group by contenu.module ";
         $query=$this->db->query($module);
         $result = $query->result_array();
         return $result;

@@ -1,13 +1,14 @@
 <div class="col-sm-9 col-md-9">
 
-    <p>
-        Voici la liste des différents modules :
-    </p>
+    <h1>
+       Modules enseignés
+    </h1>
     <table class="table table-hover">
         <tr>
             <th>Promo</th>
             <th>Semestre</th>
             <th>Module</th>
+            <th>Nombre d'heures</th>
         </tr>
         <?php if(!empty($contenu)): ?>
             <?php foreach($contenu as $lignes):?>

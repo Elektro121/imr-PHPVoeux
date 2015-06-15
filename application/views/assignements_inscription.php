@@ -1,7 +1,7 @@
 <div class="col-sm-9 col-md-9">
-    <p>
-        Voici la liste des modules ou vous pouvez vous inscrire actuellement :
-    </p>
+    <h1>
+        Modules où vous pouvez vous inscrire :
+    </h1>
     <table class="table table-hover">
         <tr>
             <th>Module</th>

@@ -2,9 +2,9 @@
     <?php if($heuresaplacer > 0): ?>
         <div class="alert alert-warning" role="alert"><span class="glyphicon glyphicon-warning-sign"></span> <b>Attention !</b> Il vous reste <b><?=$heuresaplacer?> heures</b> à placer.</div>
     <?php endif;?>
-    <p>
-        Voici les modules auquels vous vous êtes inscrits :
-    </p>
+    <h1>
+        Modules auquels vous êtes inscrits :
+    </h1>
     <table class="table table-hover">
         <tr>
             <th>Module</th>
