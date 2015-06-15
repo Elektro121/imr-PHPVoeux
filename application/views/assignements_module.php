@@ -5,24 +5,21 @@
     </p>
     <table class="table table-hover">
         <tr>
+            <th>Semestre</th>
             <th>Module</th>
-            <th>Partie</th>
-            <th>Type</th>
-            <th>HETD</th>
-            <th>Actions</th>
         </tr>
         <?php if(!empty($contenu)): ?>
             <?php foreach($contenu as $lignes):?>
                 <tr>
                     <?php foreach($lignes as $key => $colonnes): ?>
-                        <?php if($key !== 'enseignant'):?>
+                        <?php if($key !== 'ident'):?>
                             <td>
                                 <?=$colonnes?>
                             </td>
                         <?php endif;?>
                     <?php endforeach ?>
                     <td>
-                        <?php echo anchor("Assignements/Desinscrire/".$lignes['module']."/".$lignes['partie'],"<button type='button' class='btn btn-default'><span class='glyphicon glyphicon-remove-sign' aria-hidden='true' ></span></button>"); ?>
+                        <?php echo anchor("View/index".$lignes['semestre']."/".$lignes['libelle']); ?>
                     </td>
                 </tr>
             <?php endforeach ?>

@@ -24,16 +24,15 @@ class View extends CI_Controller
         $data['admin'] = $this->m_user->is_admin($data['user']);
     }
 
-    public function index()
+    public function Heure_module()
     {
         global $data;
-        $data['title'] = "Mes heures";
-        $data['contenu'] = $this->m_contenu->get_user($data['user']);
-        $data['heuresaplacer'] = $this->m_contenu->resteAPlacer($data['user']);
+        $data['title'] = "Heures par module";
+        $data['module'] = $this->m_contenu->get_module($data['user']);
         $this->load->view("header", $data);
         $this->load->view("head", $data);
         $this->load->view("menu_left", $data);
-        $this->load->view('assignements_my', $data);
+        $this->load->view('assignements_module', $data);
         $this->load->view("footer", $data);
     }
 
