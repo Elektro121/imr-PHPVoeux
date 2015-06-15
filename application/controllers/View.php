@@ -14,6 +14,7 @@ class View extends CI_Controller
         global $data;
         $this->load->model("m_user");
         $this->load->model("m_contenu");
+        $this->load->model("m_module");
         $this->load->helper("form");
         $this->load->helper("url");
         $this->load->library('session');
@@ -28,7 +29,7 @@ class View extends CI_Controller
     {
         global $data;
         $data['title'] = "Heures par module";
-        $data['module'] = $this->m_contenu->get_module($data['user']);
+        $data['contenu'] = $this->m_module->get_module();
         $this->load->view("header", $data);
         $this->load->view("head", $data);
         $this->load->view("menu_left", $data);

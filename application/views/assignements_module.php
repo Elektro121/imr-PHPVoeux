@@ -5,6 +5,7 @@
     </p>
     <table class="table table-hover">
         <tr>
+            <th>Promo</th>
             <th>Semestre</th>
             <th>Module</th>
         </tr>
@@ -19,7 +20,7 @@
                         <?php endif;?>
                     <?php endforeach ?>
                     <td>
-                        <?php echo anchor("View/index".$lignes['semestre']."/".$lignes['libelle']); ?>
+                        <?php echo anchor("View/Heure_module".$lignes['publique']."/".$lignes['semestre']."/".$lignes['libelle']); ?>
                     </td>
                 </tr>
             <?php endforeach ?>
