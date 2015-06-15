@@ -27,7 +27,7 @@
                                 <?php endif;?>
                             <?php endforeach ?>
                             <td>
-                                <?php echo anchor("Assignements/Desinscrire/".$lignes['module']."/".$lignes['partie'],"<button type='button' class='btn btn-default'><span class='glyphicon glyphicon-remove-sign' aria-hidden='true' ></span></button>"); ?>
+                                <?php echo anchor("Assignements/Desinscrire/".$lignes['module']."/".$lignes['partie'],"<button type='button' class='btn btn-default' title='Supprimer'><span class='glyphicon glyphicon-remove-sign' aria-hidden='true' ></span></button>"); ?>
                             </td>
                         </tr>
                     <?php endforeach ?>

@@ -24,7 +24,7 @@
                                 <?php endif;?>
                             <?php endforeach ?>
                             <td>
-                                <?php echo anchor("Assignements/Inscrire/".$lignes['module']."/".$lignes['partie'],"<button type='button' class='btn btn-default'><span class='glyphicon glyphicon-ok-circle' aria-hidden='true' ></span></button>"); ?>
+                                <?php echo anchor("Assignements/Inscrire/".$lignes['module']."/".$lignes['partie'],"<button type='button' class='btn btn-default' title='Inscription'><span class='glyphicon glyphicon-ok-circle' aria-hidden='true' ></span></button>"); ?>
                             </td>
                         </tr>
                     <?php endforeach ?>
