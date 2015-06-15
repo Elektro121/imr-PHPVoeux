@@ -1,7 +1,7 @@
 <div class="col-sm-9 col-md-9">
 
     <h1>
-        Prof
+        Vue des heures par enseignant
     </h1>
 
     <div class="panel panel-info">
