@@ -2,7 +2,7 @@
 
     <ul class="nav nav-sidebar">
         <li><h4><font color="#337ab7"><b>Panneau d'administration</b></font></h4></li>
-        <li><?php echo anchor("Dashboard", "Accueil")?></li>
+        <li><?php echo anchor("Dashboard", "Non Actif / Accueil")?></li>
         <li><?php echo anchor("Assignements", "Mes heures")?></li>
         <li><?php echo anchor("Assignements/Inscription", "Réservation des Heures")?></li>
         <li><?php echo anchor("View/Heure_module", "Récapitulatif des Modules")?></li>
