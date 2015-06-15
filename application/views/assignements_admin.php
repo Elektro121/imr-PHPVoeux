@@ -1,7 +1,7 @@
 <div class="col-sm-9 col-md-9">
-    <p>
-        Voici les modules auquels vous vous êtes inscrits :
-    </p>
+    <h1>
+        Inscription des enseignants
+    </h1>
     <table class="table table-hover">
         <tr>
             <th>Module</th>
