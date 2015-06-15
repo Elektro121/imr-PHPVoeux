@@ -91,7 +91,7 @@ class m_module extends CI_Model {
      * @return array
      */
     public function get_module($module) {
-        $module = "SELECT publique, semestre, libelle FROM modules ";
+        $module = "SELECT public, semestre, libelle FROM module ";
         $query=$this->db->query($module);
         $result = $query->result_array();
         return $result;
