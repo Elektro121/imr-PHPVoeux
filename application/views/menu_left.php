@@ -6,8 +6,8 @@
         <li><?php echo anchor("Assignements", "Mes heures")?></li>
         <li><?php echo anchor("Assignements/Inscription", "Réservation des Heures")?></li>
         <li><?php echo anchor("View/Heure_module", "Récapitulatif des Modules")?></li>
+        <li><?php echo anchor("View/Prof", "Heures par Enseignants")?></li>
         <li><?php echo anchor("", "Non actif / Heures par Modules")?></li>
-        <li><?php echo anchor("", " Non actif / Heures par Enseignants")?></li>
         <li><?php echo anchor("Login/Disconnect", "Déconnexion")?></li>
 
         <?php if($admin == TRUE):?>
