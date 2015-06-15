@@ -19,9 +19,6 @@
                             </td>
                         <?php endif;?>
                     <?php endforeach ?>
-                    <td>
-                        <?php echo anchor("View/Heure_module".$lignes['public']."/".$lignes['semestre']."/".$lignes['libelle']); ?>
-                    </td>
                 </tr>
             <?php endforeach ?>
         <?php endif;?>
