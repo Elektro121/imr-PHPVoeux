@@ -14,10 +14,10 @@
             <ul class="nav nav-sidebar">
                 <li><h4><font color="#337ab7"><b>Partie Administrateur</b></font></h4></li>
                 <li><?php echo anchor("Assignements/Admin", "Gestion des inscription")?></li>
-                <li><a href="">Non actif / Gestion des utilisateurs</a></li>
-                <li><a href="">Non actif / Gestion des HETD</a></li>
-                <li><a href="">Non actif / Gestion des modules</a></li>
-                <li><a href="">Non actif / Gestion des décharges</a></li>
+                <li><?php echo anchor("", " Non actif / Gestion des Utilisateurs")?></li>
+                <li><?php echo anchor("", " Non actif / Gestion des HETD")?></li>
+                <li><?php echo anchor("", " Non actif / Gestion des modules")?></li>
+                <li><?php echo anchor("", " Non actif / Gestion des décharges")?></li>
             </ul>
         <?php endif; ?>
 

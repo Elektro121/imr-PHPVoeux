@@ -2,8 +2,10 @@
     <h1>
         Inscription des enseignants
     </h1>
-    <table class="table table-hover">
-        <tr>
+
+    <div class="panel panel-info">
+    <table class="table">
+        <tr class="info2">
             <th>Module</th>
             <th>Partie</th>
             <th>Type</th>
@@ -44,4 +46,5 @@
             <?php endforeach ?>
         <?php endif;?>
     </table>
+    </div>
 </div>
