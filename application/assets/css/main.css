@@ -2,4 +2,11 @@
     width:300px;
 }
 
-body { padding-bottom: 800px; }
+body {
+    padding-bottom: 800px;
+}
+
+tr.info2{
+    background-color:#337ab7;
+    color:#ffffff;
+}

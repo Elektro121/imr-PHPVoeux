@@ -1,9 +1,11 @@
 <div class="col-sm-9 col-md-9">
-    <p>
-        Voici les modules auquels vous vous êtes inscrits :
-    </p>
-    <table class="table table-hover">
-        <tr>
+    <h1>
+        Inscription des enseignants
+    </h1>
+
+    <div class="panel panel-info">
+    <table class="table">
+        <tr class="info2">
             <th>Module</th>
             <th>Partie</th>
             <th>Type</th>
@@ -44,4 +46,5 @@
             <?php endforeach ?>
         <?php endif;?>
     </table>
+    </div>
 </div>

@@ -1,5 +1,7 @@
 <div class="col-sm-9 col-md-9">
-    <p>
+    <h1>
         Bienvenue sur votre dashboard
-    </p>
+    </h1>
+
+    <p>TODO les différentes alertes à venir plus tard par les devs</p>
 </div>
