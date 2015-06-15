@@ -12,6 +12,7 @@ class Assignements extends CI_Controller{
         global $data;
         $this->load->model("m_user");
         $this->load->model("m_contenu");
+        $this->load->helper("form");
         $this->load->helper("url");
         $this->load->library('session');
         $data['user'] = $this->session->user;
@@ -48,17 +49,19 @@ class Assignements extends CI_Controller{
         global $data;
         $module = urldecode($module);
         $type = urldecode($type);
-        if($this->m_contenu->verif_enseignant($module, $type, $data['user'])) {
-            $this->m_contenu->unsuscribe($module,$type);
-            $data['resultat']="Vous avez bien été désinscrit au cours ".$type." du module ".$module.".";
+
+        if ($this->m_contenu->verif_enseignant($module, $type, $data['user'])) {
+            $this->m_contenu->unsuscribe($module, $type);
+            $data['resultat'] = "Vous avez bien été désinscrit au cours " . $type . " du module " . $module . ".";
         } else {
             if ($data['admin'] == TRUE) {
-                $this->m_contenu->unsuscribe($module,$type);
-                $data['resultat']="Vous avez bien désinscrit l'enseignant du cours ".$type." du module ".$module.".";
+                $this->m_contenu->unsuscribe($module, $type);
+                $data['resultat'] = "Vous avez bien désinscrit l'enseignant du cours " . $type . " du module " . $module . ".";
             } else {
-                $data['error']="Vous n'avez pas les droits nécessaires pour cette action";
+                $data['error'] = "Vous n'avez pas les droits nécessaires pour cette action";
             }
         }
+
         $data['title'] = "Désinscription à un module";
         $this->load->view("header", $data);
         $this->load->view("head", $data);
@@ -71,22 +74,40 @@ class Assignements extends CI_Controller{
         global $data;
         $module = urldecode($module);
         $type = urldecode($type);
-        if($enseignant === NULL) {
-            $this->m_contenu->suscribe($module,$type,$data['user']);
-            $data['resultat']="Vous avez bien été inscrit au cours ".$type." du module ".$module.".";
+
+        if ($enseignant === NULL) {
+            $this->m_contenu->suscribe($module, $type, $data['user']);
+            $data['resultat'] = "Vous avez bien été inscrit au cours " . $type . " du module " . $module . ".";
         } else {
             if ($data['admin'] == TRUE) {
-                $this->m_contenu->suscribe($module,$type,$enseignant);
-                $data['resultat']="Vous avez bien inscrit ".$enseignant." au cours ".$type." du module ".$module.".";
+                $this->m_contenu->suscribe($module, $type, $enseignant);
+                $data['resultat'] = "Vous avez bien inscrit " . $enseignant . " au cours " . $type . " du module " . $module . ".";
             } else {
-                $data['error']="Vous n'avez pas les droits nécessaires pour cette action";
+                $data['error'] = "Vous n'avez pas les droits nécessaires pour cette action";
             }
         }
+
         $data['title'] = "Inscription à un module";
         $this->load->view("header", $data);
         $this->load->view("head", $data);
         $this->load->view("menu_left", $data);
         $this->load->view('resultat_action', $data);
         $this->load->view("footer", $data);
+    }
+
+    public function Admin() {
+        global $data;
+        if($data['admin']) {
+            $data['title'] = "Mes heures";
+            $data['contenu'] = $this->m_contenu->get_all();
+            $data['users'] = $this->m_user->get_usernames();
+            $this->load->view("header", $data);
+            $this->load->view("head", $data);
+            $this->load->view("menu_left", $data);
+            $this->load->view('assignements_admin', $data);
+            $this->load->view("footer", $data);
+        } else {
+            redirect('Dashboard', 'refresh');
+        }
     }
 }

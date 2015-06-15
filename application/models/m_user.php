@@ -159,5 +159,11 @@ class m_user extends CI_Model {
         $this -> db -> delete('enseignant');
     }
 
+    public function get_usernames() {
+        $this->db->select('login');
+        $query=$this->db->get("enseignant");
+        $result = $query->result_array();
+        return $result;
+    }
 }
 
