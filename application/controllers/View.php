@@ -33,7 +33,7 @@ class View extends CI_Controller
         $this->load->view("header", $data);
         $this->load->view("head", $data);
         $this->load->view("menu_left", $data);
-        $this->load->view('view_module', $data);
+        $this->load->view('view_modul', $data);
         $this->load->view("footer", $data);
     }
 
@@ -46,6 +46,18 @@ class View extends CI_Controller
         $this->load->view("head", $data);
         $this->load->view("menu_left", $data);
         $this->load->view('view_enseignant', $data);
+        $this->load->view("footer", $data);
+    }
+
+    public function Modules()
+    {
+        global $data;
+        $data['title'] = "Heures par module";
+        $data['contenu'] = $this->m_module->get_enseignant();
+        $this->load->view("header", $data);
+        $this->load->view("head", $data);
+        $this->load->view("menu_left", $data);
+        $this->load->view('view_modules', $data);
         $this->load->view("footer", $data);
     }
 }
