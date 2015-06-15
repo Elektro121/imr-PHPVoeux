@@ -26,7 +26,7 @@ class Utilisateur extends CI_Controller {
         global $data;
         if($data['admin']) {
             $data['contenu'] = $this->m_user->get_all();
-            $data['titre'] = "Administration des utilisateurs";
+            $data['title'] = "Administration des utilisateurs";
             $this->load->view("header", $data);
             $this->load->view("head", $data);
             $this->load->view("menu_left", $data);
