@@ -26,16 +26,6 @@ class m_contenu extends CI_Model {
         return $result;
     }
 
-    /***
-     * @param $module string
-     * @return array
-     */
-    public function get_module($module) {
-        $query=$this->db->get_where("module", array('ident' => $module));
-        $result = $query->result_array();
-        return $result;
-    }
-
     public function get_details($module, $partie) {
 
     }
