@@ -5,26 +5,35 @@
  * Time: 08:49
  */
 
-class View extends CI_Controller{
+class View extends CI_Controller
+{
 
     public function __construct()
     {
         parent::__construct();
+        global $data;
         $this->load->model("m_user");
+        $this->load->model("m_contenu");
+        $this->load->helper("form");
         $this->load->helper("url");
         $this->load->library('session');
-        $user = $this->session->user;
-        if (empty($user)) {
+        $data['user'] = $this->session->user;
+        if (empty($data['user'])) {
             redirect("/Login", 'refresh');
         }
+        $data['admin'] = $this->m_user->is_admin($data['user']);
     }
 
-    public function index() {
-        echo "Mais lol";
-    }
-
-    public function MyHours() {
-        echo "Mes Heures";
+    public function Heure_module()
+    {
+        global $data;
+        $data['title'] = "Heures par module";
+        $data['module'] = $this->m_contenu->get_module($data['user']);
+        $this->load->view("header", $data);
+        $this->load->view("head", $data);
+        $this->load->view("menu_left", $data);
+        $this->load->view('assignements_module', $data);
+        $this->load->view("footer", $data);
     }
 
 }
