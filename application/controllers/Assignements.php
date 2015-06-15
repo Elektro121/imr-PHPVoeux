@@ -98,7 +98,7 @@ class Assignements extends CI_Controller{
     public function Admin() {
         global $data;
         if($data['admin']) {
-            $data['title'] = "Mes heures";
+            $data['title'] = "Vue Admin enseignant";
             $data['contenu'] = $this->m_contenu->get_all();
             $data['users'] = $this->m_user->get_usernames();
             $this->load->view("header", $data);
