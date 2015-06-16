@@ -8,8 +8,7 @@
         <table class="table">
             <tr class="info2">
                 <th>Module</th>
-                <th>Nombre d'Heures</th>
-                <th>Heures restantes</th>
+                <th>Heures restantes à placer</th>
             </tr>
 
             <?php if(!empty($contenu)): ?>
