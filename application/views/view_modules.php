@@ -9,6 +9,7 @@
             <tr class="info2">
                 <th>Module</th>
                 <th>Heures restantes à placer</th>
+                <th>Semestre</th>
             </tr>
 
             <?php if(!empty($contenu)): ?>

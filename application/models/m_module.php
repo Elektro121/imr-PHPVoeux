@@ -111,7 +111,7 @@ class m_module extends CI_Model {
     }
 
     public function get_hmodule() {
-        $enseignant = "SELECT ident, libelle, sum(hed)
+        $enseignant = "SELECT ident, libelle, sum(hed), semestre
                         FROM contenu, module
                         where module.ident = contenu.module and contenu.enseignant is null
                         group by contenu.module";

@@ -34,7 +34,7 @@
                                                         <li><?php echo anchor("Assignements/Inscrire/".$lignes['module']."/".$lignes['partie']."/".$liste['login'], $liste['login']); ?></li>
                                                     <?php endforeach ?>
                                                 <li role="presentation" class="dropdown-header">Autre</li>
-                                                    <li><?php echo anchor("Assignements/Inscrire/".$lignes['module']."/".$lignes['partie'], "Personne"); ?></li>
+                                                    <li><?php echo anchor("Assignements/Desinscrire/".$lignes['module']."/".$lignes['partie'], "Personne"); ?></li>
                                             </ul>
                                         </div>
                                     <?php else : ?>
