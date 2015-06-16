@@ -7,10 +7,10 @@
     <div class="panel panel-info">
         <table class="table">
             <tr class="info2">
-                <th>Promo</th>
-                <th>Semestre</th>
                 <th>Module</th>
                 <th>Nombre d'heures</th>
+                <th>Promo</th>
+                <th>Semestre</th>
             </tr>
 
             <?php if(!empty($contenu)): ?>

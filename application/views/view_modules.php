@@ -1,7 +1,7 @@
 <div class="col-sm-9 col-md-9">
 
     <h1>
-        Nombre d'heures totales par module
+        Nombre d'heures restantantes par module
     </h1>
 
     <div class="panel panel-info">
@@ -9,6 +9,7 @@
             <tr class="info2">
                 <th>Module</th>
                 <th>Nombre d'Heures</th>
+                <th>Heures restantes</th>
             </tr>
 
             <?php if(!empty($contenu)): ?>
