@@ -53,7 +53,7 @@ class View extends CI_Controller
     {
         global $data;
         $data['title'] = "Heures par module";
-        $data['contenu'] = $this->m_module->get_enseignant();
+        $data['contenu'] = $this->m_module->get_hmodule();
         $this->load->view("header", $data);
         $this->load->view("head", $data);
         $this->load->view("menu_left", $data);

@@ -104,5 +104,13 @@ class m_module extends CI_Model {
         return $result;
     }
 
+    public function get_hmodule() {
+        $enseignant = "SELECT ident, libelle, sum(hed) FROM contenu INNER JOIN module where module.ident = contenu.module group by contenu.module";
+        $query=$this->db->query($enseignant);
+        $result = $query->result_array();
+        return $result;
+    }
+
 }
+
 
