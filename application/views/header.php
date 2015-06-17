@@ -3,7 +3,7 @@
     <head lang="fr">
         <meta charset="UTF-8">
         <?php if(isset($retour)): ?>
-            <meta http-equiv='Refresh' content='3; url=<?php echo site_url($retour)?>' />
+            <meta http-equiv='Refresh' content='2; url=<?php echo site_url($retour)?>' />
         <?php endif; ?>
         <link rel="stylesheet" href="<?php echo base_url('application/assets/css/bootstrap.min.css'); ?>" />
         <link rel="stylesheet" href="<?php echo base_url('application/assets/css/bootstrap-select.min.css'); ?>" />
