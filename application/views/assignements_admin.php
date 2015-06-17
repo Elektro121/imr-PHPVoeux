@@ -3,7 +3,7 @@
         Inscription des enseignants
     </h1>
 
-    <div class="panel panel-info">
+<div class="panel panel-info">
     <table class="table">
         <tr class="info2">
             <th>Module</th>
@@ -12,6 +12,7 @@
             <th>HETD</th>
             <th>Enseignant</th>
         </tr>
+
         <?php if(!empty($contenu)): ?>
             <?php foreach($contenu as $lignes):?>
                     <tr>
@@ -22,22 +23,35 @@
                                         <div class="btn-group" role="group">
                                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                 <?php if(empty($colonnes)): ?>
-                                                <span class="label label-warning">personne</span>
+                                                    <span class="label label-warning">
+                                                        personne
+                                                    </span>
                                                 <?php else : ?>
-                                                    <span class="label label-success"><?=$colonnes?></span>
+                                                    <span class="label label-success">
+                                                        <?=$colonnes?>
+                                                    </span>
                                                 <?php endif;?>
-                                                <span class="caret"></span>
+                                                    <span class="caret"></span>
                                             </button>
+
                                             <ul class="dropdown-menu" role="menu">
-                                                <li role="presentation" class="dropdown-header">Utilisateurs</li>
-                                                    <?php foreach($users as $liste): ?>
-                                                        <li><?php echo anchor("Assignements/Inscrire/".$lignes['module']."/".$lignes['partie']."/".$liste['login'], $liste['login']); ?></li>
-                                                    <?php endforeach ?>
-                                                <li role="presentation" class="dropdown-header">Autre</li>
-                                                    <li><?php echo anchor("Assignements/Desinscrire/".$lignes['module']."/".$lignes['partie'], "Personne"); ?></li>
+                                                <li role="presentation" class="dropdown-header">
+                                                    Utilisateurs
+                                                </li>
+                                                <?php foreach($users as $liste): ?>
+                                                    <li>
+                                                        <?php echo anchor("Assignements/Inscrire/".$lignes['module']."/".$lignes['partie']."/".$liste['login'], $liste['login']); ?>
+                                                    </li>
+                                                <?php endforeach ?>
+                                                <li role="presentation" class="dropdown-header">
+                                                    Autre
+                                                </li>
+                                                <li>
+                                                    <?php echo anchor("Assignements/Desinscrire/".$lignes['module']."/".$lignes['partie'], "Personne"); ?>
+                                                </li>
                                             </ul>
                                         </div>
-                                    <?php else : ?>
+                                        <?php else : ?>
                                         <?=$colonnes?>
                                     <?php endif; ?>
                                 </td>
@@ -46,5 +60,6 @@
             <?php endforeach ?>
         <?php endif;?>
     </table>
-    </div>
+</div>
+
 </div>
