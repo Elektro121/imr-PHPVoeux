@@ -46,7 +46,7 @@
                 <?php echo anchor("Utilisateur/Admin", "Gestion des Utilisateurs")?>
             </li>
             <li>
-                <?php echo anchor("", " Non actif / Gestion des modules")?>
+                <?php echo anchor("Modules", " En travaux / Gestion des modules")?>
             </li>
             <li>
                 <?php echo anchor("Decharges/Admin", "Gestion des décharges")?>
