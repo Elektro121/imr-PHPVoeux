@@ -1,6 +1,6 @@
 <div class="col-sm-9 col-md-9">
     <h1>
-        Voici la liste des utilisateurs
+        Administration des utilisateurs
         <?php echo anchor('/Utilisateur/Creation', '<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Ajouter un utilisateur', 'class="btn btn-default btn-droite"  role="button"')?>
     </h1>
 

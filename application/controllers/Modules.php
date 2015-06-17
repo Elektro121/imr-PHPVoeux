@@ -41,7 +41,7 @@ class Modules extends CI_Controller
     public function Creation() {
         global $data;
         if($data['admin']) {
-            $data['title'] = "Création d'un utilisateur";
+            $data['title'] = "Création d'un module";
 
             $this->form_validation->set_rules('pwd', 'Mot de passe', 'required');
             $this->form_validation->set_rules('pwdconfirm', 'Confirmation du mot de passe', 'required|matches[pwd]');
