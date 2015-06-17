@@ -29,7 +29,7 @@ class Modules extends CI_Controller
     public function Index()
     {
         global $data;
-        $data['title'] = "Heures par module";
+        $data['title'] = "Administration des modules";
         $data['contenu'] = $this->m_module->get_module();
         $this->load->view("header", $data);
         $this->load->view("head", $data);

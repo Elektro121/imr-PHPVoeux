@@ -1,7 +1,7 @@
 <div class="col-sm-9 col-md-9">
     <h1>
         Administration des modules enseignés
-        <?php echo anchor('/Modules/Creation', '<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Ajouter un module', 'class="btn btn-default btn-droite"  role="button"')?>
+        <?php echo anchor('', '<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Ajouter un module', 'class="btn btn-default btn-droite"  role="button"')?>
     </h1>
 
     <div class="panel panel-info">
