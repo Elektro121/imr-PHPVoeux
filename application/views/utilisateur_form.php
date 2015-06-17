@@ -7,12 +7,6 @@
     <div class="col-md-offset-3 col-md-6">
         <?php echo form_open("Utilisateur/Creation") ?>
             <div class="form-group">
-                <label for="login">
-                    Login de l'utilisateur
-                </label>
-                <input type="text" class="form-control" id="login" name="login" placeholder="Login">
-            </div>
-            <div class="form-group">
                 <label for="nom">
                     Nom et prénom
                 </label>

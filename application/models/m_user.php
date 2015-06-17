@@ -201,5 +201,26 @@ class m_user extends CI_Model {
         );
         $this->db->update('enseignant',$request,array('login' => $login));
     }
+
+    public function gen_login($nom, $prenom) {
+        $nom = substr(strtolower(trim($nom)),0,8);
+        $prenom = substr(strtolower(trim($prenom)),0,1);
+        $doublon = 0;
+        do {
+            $generation = "";
+            if($doublon != 0) {
+                $generation = $doublon;
+            }
+
+            $generation = $prenom.$nom.$generation;
+
+            if($doublon == 0) {
+                $doublon = 2;
+            } else {
+                $doublon = $doublon + 1;
+            }
+        } while ($this->exists($generation));
+        return $generation;
+    }
 }
 

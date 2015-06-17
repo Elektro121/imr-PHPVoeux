@@ -14,3 +14,11 @@ tr.info2{
 .btn-droite{
     float:right;
 }
+
+.center{
+    position: relative;
+    float: left;
+    text-align: center;
+    margin-top : 15px;
+    left: 37%;
+}

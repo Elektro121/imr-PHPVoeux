@@ -42,7 +42,6 @@ class Utilisateur extends CI_Controller {
         if($data['admin']) {
             $data['title'] = "Création d'un utilisateur";
 
-            $this->form_validation->set_rules('login', 'Nom d\'utilisateur', 'required');
             $this->form_validation->set_rules('pwd', 'Mot de passe', 'required');
             $this->form_validation->set_rules('pwdconfirm', 'Confirmation du mot de passe', 'required|matches[pwd]');
             $this->form_validation->set_rules('nom', 'Nom de Famille', 'required');
@@ -55,8 +54,12 @@ class Utilisateur extends CI_Controller {
             } else {
                 $actif = ($this->input->post('actif') === "1") ? 1 : 0;
                 $admin = ($this->input->post('administrateur') === "1") ? 1 : 0;
+                $login = $this->m_user->gen_login(
+                    $this->input->post('nom'),
+                    $this->input->post('prenom')
+                );
                 $this->m_user->add(
-                    $this->input->post('login'),
+                    $login,
                     $this->input->post('pwd'),
                     $this->input->post('nom'),
                     $this->input->post('prenom'),
@@ -65,7 +68,8 @@ class Utilisateur extends CI_Controller {
                     $actif,
                     $admin
                 );
-                $data['resultat'] = "L'utilisateur ".$this->input->get('login')."à bien été ajouté dans la base de données.";
+                $data['resultat'] = "L'utilisateur ".$login." à bien été ajouté dans la base de données.";
+                $data['retour'] = "/Utilisateur/Admin";
             }
             $this->load->view("header", $data);
             $this->load->view("head", $data);
@@ -104,6 +108,7 @@ class Utilisateur extends CI_Controller {
                     $admin
                 );
                 $data['resultat'] = "L'utilisateur ".$this->input->get('login')."à bien été modifié dans la base de données.";
+                $data['retour'] = "/Utilisateur/Admin";
             }
             $data['modify'] = $this->m_user->get_details($user);
             $this->load->view("header", $data);
@@ -125,8 +130,10 @@ class Utilisateur extends CI_Controller {
                 $this->m_user->clean($user);
                 $this->m_user->del($user);
                 $data["resultat"] = "L'utilisateur ".$user." à bien été supprimé.";
+                $data['retour'] = "/Utilisateur/Admin";
             } else {
                 $data["error"] = "L'utilisateur n'existe pas.";
+                $data['retour'] = "/Utilisateur/Admin";
             }
 
             $data['title'] = "Suppression d'un utilisateur";
