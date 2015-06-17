@@ -15,8 +15,8 @@ class m_decharge extends CI_Model {
      */
     public function get_all() {
         $query=$this->db->get("decharge");
-        $result = $query->row_array();
-        return $query;
+        $result = $query->result_array();
+        return $result;
     }
 
     /***
@@ -25,10 +25,9 @@ class m_decharge extends CI_Model {
      */
     public function set($user, $decharge) {
         $query = array(
-            'enseignant' => $user,
             'decharge' => $decharge
         );
-        $this->db->update("decharge", $query);
+        $this->db->update("decharge", $query, array('enseignant' => $user));
     }
 
     /***
@@ -36,7 +35,7 @@ class m_decharge extends CI_Model {
      * @return bool
      */
     public function exists($user) {
-        $query=$this->db->query("SELECT COUNT(*) FROM module WHERE enseignant='".$this->db->escape_str($user)."'");
+        $query=$this->db->query("SELECT COUNT(*) FROM decharge WHERE enseignant='".$this->db->escape_str($user)."'");
         $result = $query->row_array();
         if($result['COUNT(*)']== "1") {
             return TRUE;
@@ -50,8 +49,8 @@ class m_decharge extends CI_Model {
      * @param $decharge int
      */
     public function add($user, $decharge) {
-        if(exist($user)) {
-            set($user, $decharge);
+        if($this->exists($user)) {
+            $this->set($user, $decharge);
         }
         else {
             $query = array(

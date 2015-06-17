@@ -17,7 +17,7 @@
                 <li><?php echo anchor("Utilisateur/Admin", "Gestion des Utilisateurs")?></li>
                 <li><?php echo anchor("", " Non actif / Gestion des HETD")?></li>
                 <li><?php echo anchor("", " Non actif / Gestion des modules")?></li>
-                <li><?php echo anchor("", " En travaux / Gestion des décharges")?></li>
+                <li><?php echo anchor("Decharges/Admin", "Gestion des décharges")?></li>
             </ul>
         <?php endif; ?>
 
