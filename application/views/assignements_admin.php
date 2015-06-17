@@ -1,6 +1,6 @@
 <div class="col-sm-9 col-md-9">
     <h1>
-        Inscription des enseignants
+        Administration des enseignements
     </h1>
 
 <div class="panel panel-info">
