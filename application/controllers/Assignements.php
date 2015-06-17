@@ -81,7 +81,7 @@ class Assignements extends CI_Controller{
         if ($enseignant === NULL) {
             $this->m_contenu->suscribe($module, $type, $data['user']);
             $data['resultat'] = "Vous avez bien été inscrit au cours " . $type . " du module " . $module . ".";
-            $data['retour'] = "/Assignements";
+            $data['retour'] = "/Assignements/Inscription";
         } else {
             if ($data['admin'] == TRUE) {
                 $this->m_contenu->suscribe($module, $type, $enseignant);

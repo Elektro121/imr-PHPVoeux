@@ -15,10 +15,12 @@ tr.info2{
     float:right;
 }
 
-.center{
+.bienvenue{
     position: relative;
     float: left;
     text-align: center;
-    margin-top : 15px;
+    font-size: 23px;
+    color: #337ab7;
+    margin-top : 8px;
     left: 37%;
 }

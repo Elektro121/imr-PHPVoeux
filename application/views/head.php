@@ -4,9 +4,9 @@
             <a>
                 <img src="<?php echo base_url('application/assets/Images/Enssat_logo.png'); ?>" alt="Logo école" style="float:left" width="100" height="">
             </a>
-            <div class="center">
+            <div class="bienvenue">
                 <?php if(isset($user)): ?>
-                    <?php echo "Bonjour <b>".$user."</b> !";?>
+                    <?php echo "Bonjour $user";?>
                 <?php endif; ?>
             </div>
             <a>
