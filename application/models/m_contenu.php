@@ -77,6 +77,18 @@ class m_contenu extends CI_Model {
         $this->db->insert('contenu', $query);
     }
 
+    public function set($module, $partie, $type, $hed) {
+        $where = array(
+            'module' => $module,
+            'partie' => $partie
+        );
+        $query = array(
+            'type' => $type,
+            'hed' => $hed
+        );
+        $this->db->update('contenu',$query,$where);
+    }
+
     public function get_all_unsuscribed() {
         $query=$this->db->get_where("contenu", array('enseignant' => NULL));
         $result = $query->result_array();

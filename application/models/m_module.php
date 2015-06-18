@@ -43,12 +43,11 @@ class m_module extends CI_Model {
      */
     public function set($ident, $public, $semestre, $libelle) {
         $query = array(
-            'ident' => $ident,
             'public' => $public,
             'semestre' => $semestre,
             'libelle' => $libelle
         );
-        $this->db->update("module", $query);
+        $this->db->update("module", $query, array('ident' => $ident));
     }
 
     /***

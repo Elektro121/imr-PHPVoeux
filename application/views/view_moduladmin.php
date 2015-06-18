@@ -35,8 +35,8 @@
                             <?php endif;?>
                         <?php endforeach ?>
                         <td>
-                            <?php echo anchor("".$lignes['libelle'],"<button type='button' class='btn btn-default' title='Modifier'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></button>"); ?>
-                            <?php echo anchor("".$lignes['libelle'],"<button type='button' class='btn btn-default' title='Supprimer'><span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span></button>"); ?>
+                            <?php echo anchor("/Modules/Modification/".$lignes['ident'],"<button type='button' class='btn btn-default' title='Modifier'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></button>"); ?>
+                            <?php echo anchor("/Modules/Supprimer/".$lignes['ident'],"<button type='button' class='btn btn-default' title='Supprimer'><span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span></button>"); ?>
                         </td>
                     </tr>
                 <?php endforeach ?>
