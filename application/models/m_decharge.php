@@ -19,6 +19,16 @@ class m_decharge extends CI_Model {
         return $result;
     }
 
+    public function get($user) {
+        $query=$this->db->get_where("decharge", array('enseignant' => $user));
+        $result=$query->row_array();
+        if(isset($result['decharge'])) {
+            return $result['decharge'];
+        } else {
+            return 0;
+        }
+    }
+
     /***
      * @param $user string
      * @param $decharge int

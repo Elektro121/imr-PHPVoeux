@@ -21,7 +21,7 @@
         <?php echo anchor("/Utilisateur/ChangerMotDePasse","<button type='button' class='btn btn-default' title='Changer le mdp'><span class='glyphicon glyphicon-hand-right' aria-hidden='true'></span> <b> Changement de mdp</b></button>"); ?>
     </p>
     <p>
-        <?php echo anchor("/Utilisateur/ModifierDecharge","<button type='button' class='btn btn-default' title='Modifier les décharges'><span class='glyphicon glyphicon-folder-open' aria-hidden='true'></span> <b> Modifier mes décharges</b></button>"); ?>
+        <?php echo anchor("/Decharges","<button type='button' class='btn btn-default' title='Modifier les décharges'><span class='glyphicon glyphicon-folder-open' aria-hidden='true'></span> <b> Modifier mes décharges</b></button>"); ?>
     </p>
 
 </div>

@@ -24,6 +24,36 @@ class Decharges extends CI_Controller
         $data['admin'] = $this->m_user->is_admin($data['user']);
     }
 
+    public function index() {
+        global $data;
+        $data['title'] = "Modification de vos décharges";
+        $this->form_validation->set_rules('decharge', 'Heures déchargés', 'required');
+
+        $user = $this->session->user;
+
+        if ($this->form_validation->run() == FALSE) {
+
+        } else {
+            $decharge = $this->input->post('decharge');
+            if ($this->m_user->exists($user)) {
+                $this->m_decharge->add($user, $decharge);
+                $data['resultat'] = "Votre décharge à bien été prise en compte.";
+                $data["retour"] = "Dashboard";
+            } else {
+                $data['error'] = "L'utilisateur n'existe pas, vous avez sûrement été supprimé de la base, dommage pour vous, humain.";
+            }
+        }
+
+        $data['decharge'] = $this->m_decharge->get($user);
+
+        $this->load->view("header", $data);
+        $this->load->view("head", $data);
+        $this->load->view("menu_left", $data);
+        $this->load->view("resultat_action", $data);
+        $this->load->view("decharge_user", $data);
+        $this->load->view("footer", $data);
+    }
+
     public function Admin()
     {
         global $data;
@@ -99,7 +129,7 @@ class Decharges extends CI_Controller
                 $decharge = $this ->input->post('decharge');
                 if ($this->m_user->exists($user)) {
                     $this->m_decharge->add($user,$decharge);
-                    $data['resultatat'] = "La décharge de " . $user . " à été crée.";
+                    $data['resultat'] = "La décharge de " . $user . " à été crée.";
                 } else {
                     $data['error'] = "L'utilisateur n'existe pas.";
                 }
@@ -108,9 +138,6 @@ class Decharges extends CI_Controller
             $this->Admin();
         } else {
             redirect('Dashboard', 'refresh');
-            //Code autre chose pour qu'un utilisateur unique puisse créer sa décharge
-
         }
-
     }
 }
