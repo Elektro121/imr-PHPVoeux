@@ -222,5 +222,15 @@ class m_user extends CI_Model {
         } while ($this->exists($generation));
         return $generation;
     }
+
+    public function mdp($user){
+        $query=$this->db->query("SELECT pwd FROM enseignant WHERE login ='".$this->db->escape_str($user)."'");
+        $results = $query->row_array();
+        if($results['pwd']== "servicesENSSAT") {
+            return TRUE;
+        }else{
+            return FALSE;
+        }
+    }
 }
 

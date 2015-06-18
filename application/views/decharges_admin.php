@@ -31,8 +31,8 @@
                             </td>
                         <?php endforeach ?>
                         <td>
-                            <?php echo anchor("Decharges/Modifier/".$lignes['enseignant'], "Modifier"); ?>
-                            <?php echo anchor("Decharges/Supprimer/".$lignes['enseignant'], "Supprimer"); ?>
+                            <?php echo anchor("Decharges/Modifier/".$lignes['enseignant'], "<button type='button' class='btn btn-default' title='Modifier'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></button>"); ?>
+                            <?php echo anchor("Decharges/Supprimer/".$lignes['enseignant'], "<button type='button' class='btn btn-default' title='Supprimer'><span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span></button>"); ?>
                         </td>
                     </tr>
                 <?php else : ?>

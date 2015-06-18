@@ -29,6 +29,7 @@ class Dashboard extends CI_Controller
         $data['title'] = "Mes heures";
         $data['contenu'] = $this->m_contenu->get_user($data['user']);
         $data['heuresaplacer'] = $this->m_contenu->resteAPlacer($data['user']);
+        $data['mdp'] = $this->m_user->mdp($data['user']);
         $this->load->view("header", $data);
         $this->load->view("head", $data);
         $this->load->view("menu_left", $data);
