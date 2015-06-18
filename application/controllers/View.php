@@ -62,4 +62,28 @@ class View extends CI_Controller
     }
 
 
+    public function Affmodules($module)
+    {
+        global $data;
+        $data['title'] = "Heures pour le module";
+        $data['contenu'] = $this->m_contenu->get_module($module);
+        $this->load->view("header", $data);
+        $this->load->view("head", $data);
+        $this->load->view("menu_left", $data);
+        $this->load->view('view_modules_detail', $data);
+        $this->load->view("footer", $data);
+    }
+
+    public function Affenseignant($enseignant)
+    {
+        global $data;
+        $data['title'] = "Heures par enseignant";
+        $data['contenu'] = $this->m_contenu->get_enseignant($enseignant);
+        $this->load->view("header", $data);
+        $this->load->view("head", $data);
+        $this->load->view("menu_left", $data);
+        $this->load->view('view_enseignant_detail', $data);
+        $this->load->view("footer", $data);
+    }
+
 }

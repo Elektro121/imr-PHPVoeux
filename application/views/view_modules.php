@@ -34,7 +34,7 @@
                         <?php endif;?>
                     <?php endforeach ?>
                     <td>
-                        <?php echo anchor("".$lignes['libelle'],"<button type='button' class='btn btn-default' title='Détail du module'><span class='glyphicon glyphicon-eye-open' aria-hidden='true'></span></button>"); ?>
+                        <?php echo anchor("/View/Affmodules/".$lignes['ident'],"<button type='button' class='btn btn-default' title='Détail du module'><span class='glyphicon glyphicon-eye-open' aria-hidden='true'></span></button>"); ?>
                     </td>
                 </tr>
             <?php endforeach ?>

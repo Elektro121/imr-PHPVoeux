@@ -15,6 +15,9 @@
             <th>
                 Heures restantes
             </th>
+            <th>
+                Action
+            </th>
         </tr>
 
         <?php if(!empty($contenu)): ?>
@@ -27,6 +30,9 @@
                             </td>
                         <?php endif;?>
                     <?php endforeach ?>
+                    <td>
+                        <?php echo anchor("/View/Affenseignant/".$lignes['login'],"<button type='button' class='btn btn-default' title='Détail du module'><span class='glyphicon glyphicon-eye-open' aria-hidden='true'></span></button>"); ?>
+                    </td>
                 </tr>
             <?php endforeach ?>
         <?php endif;?>

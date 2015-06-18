@@ -36,6 +36,12 @@ class m_contenu extends CI_Model {
         return $result;
     }
 
+    public function get_enseignant($enseignant) {
+        $query = $this->db->get_where("contenu", array('enseignant' => $enseignant));
+        $result = $query->result_array();
+        return $result;
+    }
+
     public function exists($module, $partie) {
         $query=$this->db->query("SELECT COUNT(*) FROM contenu WHERE module='".$this->db->escape_str($module)."' AND partie='".$this->db->escape_str($partie)."'");
         $result = $query->row_array();

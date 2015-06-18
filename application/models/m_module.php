@@ -99,10 +99,9 @@ class m_module extends CI_Model {
     }
 
     public function get_enseignant() {
-        $enseignant = "SELECT nom, sum(hed), statutaire - sum(hed)
-                        FROM contenu INNER JOIN enseignant
-                        WHERE enseignant.login = contenu.enseignant
-                        GROUP BY contenu.enseignant";
+        $enseignant = "SELECT login, nom, service, statutaire - service
+                        FROM contenu INNER JOIN services
+                        GROUP BY services.login";
         $query=$this->db->query($enseignant);
         $result = $query->result_array();
         return $result;
