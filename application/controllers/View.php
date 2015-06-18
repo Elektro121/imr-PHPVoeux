@@ -60,4 +60,6 @@ class View extends CI_Controller
         $this->load->view('view_modules', $data);
         $this->load->view("footer", $data);
     }
+
+
 }

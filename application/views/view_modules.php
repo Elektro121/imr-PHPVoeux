@@ -10,10 +10,16 @@
                 Module
             </th>
             <th>
+                Heures totales du module
+            </th>
+            <th>
                 Heures restantes à placer
             </th>
             <th>
                 Semestre
+            </th>
+            <th>
+                Action
             </th>
         </tr>
 
@@ -27,6 +33,9 @@
                             </td>
                         <?php endif;?>
                     <?php endforeach ?>
+                    <td>
+                        <?php echo anchor("".$lignes['libelle'],"<button type='button' class='btn btn-default' title='Détail du module'><span class='glyphicon glyphicon-eye-open' aria-hidden='true'></span></button>"); ?>
+                    </td>
                 </tr>
             <?php endforeach ?>
         <?php endif;?>
