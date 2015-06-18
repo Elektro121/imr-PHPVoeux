@@ -56,10 +56,8 @@ class m_module extends CI_Model {
      * Probablement buggée
      */
     public function del($ident) {
-        $query = array(
-            'ident' => $ident,
-        );
-        $this->db->delete("module","ident = ".$ident);
+        $this->db->where('ident', $ident);
+        $this->db->delete("module");
     }
 
     /***
@@ -91,7 +89,7 @@ class m_module extends CI_Model {
      * @return array
      */
     public function get_module() {
-        $module = "SELECT  libelle, sum(hed), public, semestre
+        $module = "SELECT  ident, libelle, sum(hed), public, semestre
                     FROM contenu INNER JOIN module
                     WHERE module.ident = contenu.module
                     GROUP BY contenu.module";
@@ -119,6 +117,7 @@ class m_module extends CI_Model {
         $result = $query->result_array();
         return $result;
     }
+
 
 }
 

@@ -26,16 +26,49 @@ class m_contenu extends CI_Model {
         return $result;
     }
 
-    public function get_details($module, $partie) {
+    /***
+     * @param $module string
+     * @return array
+     */
+    public function get_module($module) {
+        $query=$this->db->get_where("contenu", array('module' => $module));
+        $result = $query->result_array();
+        return $result;
+    }
 
+    public function exists($module, $partie) {
+        $query=$this->db->query("SELECT COUNT(*) FROM contenu WHERE module='".$this->db->escape_str($module)."' AND partie='".$this->db->escape_str($partie)."'");
+        $result = $query->row_array();
+        if($result['COUNT(*)']== "1") {
+            return TRUE;
+        }else{
+            return FALSE;
+        }
     }
 
     public function del($module, $partie) {
+        $this->unsuscribe($module, $partie);
 
+        $this -> db -> where('module', $module);
+        $this -> db -> where('partie', $partie);
+        $this -> db -> delete('contenu');
     }
 
-    public function add() {
+    public function del_all($module) {
+        $this -> unsuscribe_all($module);
 
+        $this -> db -> where('module', $module);
+        $this -> db -> delete('contenu');
+    }
+
+    public function add($module, $partie, $type, $hed) {
+        $query = array(
+            'module' => $module,
+            'partie' => $partie,
+            'type' => $type,
+            'hed' => $hed
+        );
+        $this->db->insert('contenu', $query);
     }
 
     public function get_all_unsuscribed() {
@@ -66,6 +99,13 @@ class m_contenu extends CI_Model {
         $where = array(
             'module' => $module,
             'partie' => $partie,
+        );
+        $this->db->update('contenu',array('enseignant' => NULL), $where);
+    }
+
+    public function unsuscribe_all($module) {
+        $where = array(
+            'module' => $module,
         );
         $this->db->update('contenu',array('enseignant' => NULL), $where);
     }
