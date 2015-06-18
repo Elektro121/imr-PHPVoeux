@@ -126,7 +126,6 @@ class Utilisateur extends CI_Controller {
         global $data;
         if($data['admin']) {
             if($this->m_user->exists($user)) {
-                //Ajouter des trucs là quand même
                 $this->m_user->clean($user);
                 $this->m_user->del($user);
                 $data["resultat"] = "L'utilisateur ".$user." à bien été supprimé.";
@@ -145,5 +144,28 @@ class Utilisateur extends CI_Controller {
         } else {
             redirect('Dashboard', 'refresh');
         }
+    }
+
+    public function ChangerMotDePasse() {
+        global $data;
+        $data['title'] = "Modification du mot de passe";
+        $this->form_validation->set_rules('pwd', 'Mot de passe', 'required');
+        $this->form_validation->set_rules('pwdconfirm', 'Confirmation du mot de passe', 'required|matches[pwd]');
+
+        $this->load->view("header", $data);
+        $this->load->view("head", $data);
+        $this->load->view("menu_left", $data);
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view("resultat_action", $data);
+            $this->load->view("utilisateur_mdp", $data);
+        } else {
+            $this->m_user->change_password(
+                $this->session->user,
+                $this->input->post("pwd"));
+            $data["resultat"] = "Votre mot de passe à bien été changé !";
+            $data["retour"] = "Dashboard";
+            $this->load->view("resultat_action", $data);
+        }
+        $this->load->view("footer", $data);
     }
 }

@@ -19,10 +19,12 @@ class m_user extends CI_Model {
      */
     public function change_password($user,$password){
         $query = array(
-            'login' => $user,
             'pwd' => $password
         );
-        $this->db->update("enseignant", $query);
+        $where = array(
+            'login' => $user
+        );
+        $this->db->update("enseignant", $query, $where);
     }
 
     /**
