@@ -4,7 +4,7 @@
         <li>
             <h4>
                 <font color="#337ab7">
-                    <b>Panneau d'administration</b>
+                    <b>Gestions des heures et modules</b>
                 </font>
             </h4>
         </li>
@@ -35,7 +35,8 @@
             <li>
                 <h4>
                     <font color="#337ab7">
-                        <b>Partie Administrateur</b>
+                        <b>Panneau d'administration
+                        </b>
                     </font>
                 </h4>
             </li>
