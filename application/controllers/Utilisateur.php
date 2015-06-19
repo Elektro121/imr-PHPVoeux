@@ -174,8 +174,13 @@ class Utilisateur extends CI_Controller {
         $data['title'] = "Remise à zéro du mot de passe";
         if($data['admin']) {
             $this -> m_user -> change_password($user,"servicesENSSAT");
-            $data['resultat']="Le mot de passe à bien été remis à zéro. Utilisez le mot de passe \"servicesENSSAT\" pour vous connecter au compte de".$user.".";
+            $data['resultat']="Le mot de passe à bien été remis à zéro. Utilisez le mot de passe \"servicesENSSAT\" pour vous connecter au compte de ".$user.".";
             $data['retour']="Utilisateur/Admin";
+            $this->load->view("header", $data);
+            $this->load->view("head", $data);
+            $this->load->view("menu_left", $data);
+            $this->load->view("resultat_action", $data);
+            $this->load->view("footer", $data);
         } else {
             redirect('Dashboard', 'refresh');
         }

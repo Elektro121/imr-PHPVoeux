@@ -10,7 +10,7 @@
             </h4>
         </li>
         <li>
-            <?php echo anchor("Dashboard","<span class='glyphicon glyphicon-dashboard' aria-hidden='true'></span> En travaux / Accueil")?>
+            <?php echo anchor("Dashboard","<span class='glyphicon glyphicon-dashboard' aria-hidden='true'></span> Accueil")?>
         </li>
         <li>
             <?php echo anchor("Assignements", "<span class='glyphicon glyphicon-time' aria-hidden='true'></span> Mes heures")?>
@@ -49,7 +49,7 @@
                 <?php echo anchor("Utilisateur/Admin", "<span class='glyphicon glyphicon-user' aria-hidden='true'></span> Gestion des Utilisateurs")?>
             </li>
             <li>
-                <?php echo anchor("Modules", "<span class='glyphicon glyphicon-education' aria-hidden='true'></span> En travaux / Gestion des modules")?>
+                <?php echo anchor("Modules", "<span class='glyphicon glyphicon-education' aria-hidden='true'></span> Gestion des modules")?>
             </li>
             <li>
                 <?php echo anchor("Decharges/Admin", "<span class='glyphicon glyphicon-tags' aria-hidden='true'></span> Gestion des décharges")?>

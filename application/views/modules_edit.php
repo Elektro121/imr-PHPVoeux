@@ -70,8 +70,8 @@
                             <?php endif; ?>
                         <?php endforeach; ?>
                         <td>
-                            <?php echo anchor("Modules/ModifierCours/".$lignes['module']."/".$lignes['partie'], "Modifier"); ?>
-                            <?php echo anchor("Modules/SupprimerCours/".$lignes['module']."/".$lignes['partie'], "Supprimer"); ?>
+                            <?php echo anchor("Modules/ModifierCours/".$lignes['module']."/".$lignes['partie'], "<button type='button' class='btn btn-default' title='Modifier'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></button>");  ?>
+                            <?php echo anchor("Modules/SupprimerCours/".$lignes['module']."/".$lignes['partie'], "<button type='button' class='btn btn-default' title='Supprimer'><span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span></button>"); ?>
                         </td>
                     </tr>
                 <?php else : ?>
@@ -108,7 +108,7 @@
                         </td>
                         <td>
                             <button type="submit" class="btn btn-default" value="ok" form="modifier">Envoyer</button>
-                            <?php echo anchor("Modules/SupprimerCours/".$lignes['enseignant'], "Supprimer"); ?>
+                            <?php echo anchor("Modules/SupprimerCours/".$lignes['enseignant'], "<button type='button' class='btn btn-default' title='Supprimer'><span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span></button>"); ?>
                         </td>
                     </tr>
                 <?php endif; ?>
