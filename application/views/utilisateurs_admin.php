@@ -48,7 +48,7 @@
             <td>
                 <?php echo anchor("Utilisateur/Modification/".$lignes['login'],"<button type='button' class='btn btn-default' title='Modifier'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></button>"); ?>
                 <?php echo anchor("Utilisateur/Supprimer/".$lignes['login'],"<button type='button' class='btn btn-default' title='Supprimer'><span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span></button>"); ?>
-                <?php echo anchor("Utilisateur/ResetMotDePasse/".$lignes['login'],"<button type='button' class='btn btn-default' title='Remettre à zéro le mot de passe'><span class='glyphicon' aria-hidden='true'></span></button>"); ?>
+                <?php echo anchor("Utilisateur/ResetMotDePasse/".$lignes['login'],"<button type='button' class='btn btn-default' title='Remettre à zéro le mot de passe'><span class='glyphicon glyphicon-repeat' aria-hidden='true'></span></button>"); ?>
             </td>
         </tr>
     <?php endforeach ?>
