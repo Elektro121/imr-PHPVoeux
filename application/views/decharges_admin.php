@@ -45,7 +45,7 @@
                             </td>
                             <td>
                                 <button type="submit" class="btn btn-default" value="ok" form="modifier">Envoyer</button>
-                                <?php echo anchor("Decharges/Supprimer/".$lignes['enseignant'], "Supprimer"); ?>
+                                <?php echo anchor("Decharges/Supprimer/".$lignes['enseignant'], "<button type='button' class='btn btn-default' title='Supprimer'><span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span></button>"); ?>
                             </td>
                     </tr>
                 <?php endif; ?>

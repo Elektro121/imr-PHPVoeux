@@ -59,7 +59,7 @@
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="administateur" value="1"
+                    <input type="checkbox" name="administrateur" value="1"
                         <?php if ($modify['administrateur']=="1"):?>
                         checked
                     <?php endif;?>> Possède les pouvoirs d'administration
